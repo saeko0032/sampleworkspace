@@ -1,5 +1,6 @@
-#include "rsa_encryption.cpp"
-#include "key_storage.cpp"
+#include "rsa_encryption.h"
+#include "key_storage.h"
+#include <ntstatus.h>
 
 int main() {
     // Open algorithm provider
