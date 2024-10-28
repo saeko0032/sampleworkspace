@@ -52,22 +52,34 @@
    cd sampleworkspace
    ```
 
-2. ビルドディレクトリを作成して移動します:
+2. vcpkgをインストールします:
+   ```
+   git clone https://github.com/microsoft/vcpkg.git
+   cd vcpkg
+   ./bootstrap-vcpkg.bat
+   ```
+
+3. vcpkgをCMakeに統合します:
+   ```
+   ./vcpkg integrate install
+   ```
+
+4. ビルドディレクトリを作成して移動します:
    ```
    mkdir build
    cd build
    ```
 
-3. CMakeを使用してビルドファイルを生成します:
+5. CMakeを使用してビルドファイルを生成します:
    ```
-   cmake ..
+   cmake -DCMAKE_TOOLCHAIN_FILE=../vcpkg/scripts/buildsystems/vcpkg.cmake -A x64 ..
    ```
 
-4. プロジェクトをビルドします:
+6. プロジェクトをビルドします:
    ```
    cmake --build .
    ```
 
-5. 実行ファイルを実行します:
+7. 実行ファイルを実行します:
    - 出力ディレクトリ（例：`Debug` または `Release`）に移動します。
    - 生成された実行ファイル（例：`sampleworkspace.exe`）を実行します。
