@@ -1,9 +1,10 @@
+#include "rsa_encryption.h"
+#include <ntstatus.h>
+
 #include <windows.h>
 #include <bcrypt.h>
 #include <iostream>
 #include <vector>
-
-#pragma comment(lib, "bcrypt.lib")
 
 void HandleError(const char* msg, NTSTATUS status) {
     std::cerr << msg << " Error code: " << status << std::endl;

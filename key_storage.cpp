@@ -1,12 +1,11 @@
+#include "key_storage.h"
+
 #include <windows.h>
 #include <dpapi.h>
 #include <bcrypt.h>
 #include <iostream>
 #include <vector>
 #include <fstream>
-
-#pragma comment(lib, "crypt32.lib")
-#pragma comment(lib, "bcrypt.lib")
 
 void HandleError(const char* msg, DWORD errorCode) {
     std::cerr << msg << " Error code: " << errorCode << std::endl;
